@@ -19,8 +19,12 @@ public class Principal extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("msg", "ESTOU AQUI!!");
-		RequestDispatcher rd= request.getRequestDispatcher("index.jsp");
+		String Nome = request.getParameter("nome");
+		String Idade = request.getParameter("idade");
+		
+		request.setAttribute("Nome", Nome);
+		request.setAttribute("Idade", Idade);
+		RequestDispatcher rd= request.getRequestDispatcher("resposta.jsp");
 		rd.forward(request, response);
 		
 

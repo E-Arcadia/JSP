@@ -4,17 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Minha primeira JSP</title>
+<title>RESPOSTA</title>
 </head>
 <body>
-<h1>Página inicial</h1>
-<h2>Prencha os Dados</h2>
-<form action="principal" method="get">
-		Nome:<br> 
-		<input type="text" name="nome"><br> 
-		Idade:<br> 
-		<input type="text" name="idade"><br>
-		<br> <input type="submit" value="Submit">
-	</form>
+	<h1>Página de resposta</h1>
+	<h2>Recebendo e Mostrando os Atributos</h2>
+	<%
+		String Nome = (String) request.getAttribute("Nome");
+		String Idade = (String) request.getAttribute("Idade");
+	%>
+
+	<p>
+		Nome recebido:<%=Nome%><br>
+		Idade:<%=Idade%>
+	</p>
 </body>
 </html>
